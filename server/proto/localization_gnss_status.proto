@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package apollo.server;
+
+import "modules/localization/proto/localization.proto";
+import "modules/common/proto/gnss_status.proto";
+
+message LocalizationGnssStatus {
+  optional apollo.common.gnss_status.GnssStatus gnss_status = 1;
+  optional apollo.localization.LocalizationEstimate localization = 2;
+}

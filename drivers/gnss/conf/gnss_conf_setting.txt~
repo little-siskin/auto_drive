@@ -1,0 +1,12 @@
+data {
+    format: UNICOMM_BINARY
+    serial {
+        device: "/dev/ttyUSB0"
+        baud_rate: 115200
+    }
+}
+
+
+#login_setting_commands: "UNLOGALL COM1\r\n"
+login_setting_commands: "4\r\n"
+

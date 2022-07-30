@@ -1,0 +1,1 @@
+kill -10 $(pgrep gnss_setter)

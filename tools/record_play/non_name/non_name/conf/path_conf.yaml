@@ -1,0 +1,5 @@
+type: ab
+zone: 52
+inc: 0.7071067811865 #  (2^(1/2))/2
+time_inc: 0.1
+points_num: 10000

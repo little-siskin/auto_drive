@@ -1,0 +1,11 @@
+data {
+    format: UNICOMM_BINARY
+    serial {
+        device: "/dev/ttyUSB0"
+        baud_rate: 115200
+    }
+}
+
+
+#login_setting_commands: "UNLOGALL COM1\r\n"
+login_setting_commands: "CONFIG INS ATTITUDE 0.00000.0000 0.0000 5 5 5"

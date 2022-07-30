@@ -1,0 +1,59 @@
+data {
+    format: UNICOMM_BINARY
+    serial {
+        device: "/dev/ttyUSB0"
+        baud_rate: 115200
+    }
+}
+
+#rtk_from {
+#    format: RTCM_V3
+#    ntrip {
+#        #address:
+#        #port:
+#        #mount_point:
+#        #user:
+#        #password:
+#        timeout_s: 5
+#    }
+#}
+
+#rtk_from {
+#    format: RTCM_V3
+#    ntrip {
+#        address: "10.0.100.2"
+#        port:9000
+#        mount_point: "UB4B0_RTCM32"
+#        user: "tractor"
+#        password: "SERV_PASSWORD"
+#        timeout_s: 5
+#    }
+#}
+
+
+#rtk_to {
+#    format: UNICOMM_BINARY
+#    serial {
+#        device: "/dev/ttyUSB1"
+#        baud_rate: 115200
+#    }
+#}
+
+#rtk_solution_type: RTK_RECEIVER_SOLUTION
+
+
+login_commands:"UNLOGALL COM1\r\n"
+login_commands: "config ins angle 2 2 2\r\n"
+login_commands: "config ins timeout 200\r\n"
+login_commands: "config ins alignmentvel 1.0\r\n"
+login_commands: "config imutoant offset  -1.35 1.10 1.07 0.03 0.03\r\n"
+login_commands: "config imutoant2 offset 0.20 1.10 1.07 0.03 0.03 0.05\r\n"
+#login_commands: "config rtktimeout 600\r\n"
+login_commands: "CONFIG COM1 115200\r\n"
+login_commands: "CONFIG INS ENABLE\r\n"
+#login_commands: "LOG RANGEB ONTIME 0.5\r\n"
+login_commands: "LOG RAWIMUXB ONTIME 0.05\r\n"
+login_commands: "LOG BESTVELB ONTIME 0.5\r\n"
+login_commands: "LOG BESTPOSB ONTIME 0.5\r\n"
+login_commands: "LOG DRPVAB ONTIME 0.05\r\n"
+logout_commands: "UNLOGALL COM1\r\n"

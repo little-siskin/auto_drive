@@ -1,0 +1,66 @@
+data {
+    format: UNICOMM_BINARY
+    serial {
+        device: "/dev/ttyUSB0"
+        baud_rate: 115200
+    }
+}
+
+#rtk_from {
+#    format: RTCM_V3
+#    ntrip {
+#        #address:
+#        #port:
+#        #mount_point:
+#        #user:
+#        #password:
+#        timeout_s: 5
+#    }
+#}
+
+rtk_from {
+    format: RTCM_V3
+    ntrip {
+        address:10.0.100.2
+        port:9000
+        mount_point:UB4B0_RTCM32
+        user:tractor
+        password:SERV_PASSWORD
+        timeout_s: 5
+    }
+}
+
+
+rtk_to {
+    format: UNICOMM_BINARY
+    serial {
+        device: "/dev/ttyUSB1"
+        baud_rate: 115200
+    }
+}
+
+rtk_solution_type: RTK_RECEIVER_SOLUTION
+
+
+#login_commands_invalid: "UNLOGALL THISPORT\r\n"
+login_commands:"UNLOGALL\r\n"
+#login_commands_invalid: "LOG COM2 GPRMC ONTIME 1.0 0.25\r\n"
+login_commands: "GPRMC ONTIME 1.0 0.25\r\n"
+#login_commands_invalid: "EVENTOUTCONTROL MARK2 ENABLE POSITIVE 999999990 10\r\n"
+#login_commands_invalid: "EVENTOUTCONTROL MARK1 ENABLE POSITIVE 500000000 500000000\r\n"
+#login_commands_invalid: "LOG NCOM1 GPGGA ONTIME 1.0\r\n"
+
+#login_commands_invalid: "log bestgnssposb ontime 0.5\r\n"
+#login_commands_invalid: "log bestgnssvelb ontime 0.5\r\n"
+#login_commands_invalid: "log bestposb ontime 0.5\r\n"
+login_commands: "LOG BESTPOSA ONTIME 0.5\r\n"
+#login_commands_invalid: "log INSPVASB ontime 0.01\r\n"
+#login_commands_invalid: "log CORRIMUDATASB ontime 0.01\r\n"
+#login_commands_invalid: "log INSCOVSB ontime 1\r\n"
+#login_commands_invalid: "log mark1pvab onnew\r\n"
+
+#login_commands_invalid: "log imutoantoffsetsb once\r\n"
+#login_commands_invalid: "log vehiclebodyrotationb onchanged\r\n"
+
+#logout_commands_invalid: "EVENTOUTCONTROL MARK2 DISABLE\r\n"
+#logout_commands_invalid: "EVENTOUTCONTROL MARK1 DISABLE\r\n"

@@ -1,0 +1,10 @@
+#semicircle_type: 1; to right or up.
+#semicircle_type: 2; to left or down.
+semicircle_type: 1
+#type: 1 ;Paths without semicircles.
+#type: 2 ;Paths with semicircles.
+type: 2
+lines_distance: 100
+# odd only.
+lines_num: 5
+time_inc: 0.1
